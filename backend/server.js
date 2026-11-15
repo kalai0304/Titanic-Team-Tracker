@@ -11,8 +11,7 @@ app.use(express.json());
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/players', require('./routes/players'));
 
-// mongoose.connect(process.env.MONGO_URI)
-mongoose.connect("mongodb+srv://7upkalai_db_user:UhOnqMbplMlYJEiD@titaniccc.yx7olyy.mongodb.net/test?retryWrites=true&w=majority")
+mongoose.connect(process.env.MONGO_URI)
   .then(() => {
     app.listen(process.env.PORT || 5000, () =>
       console.log(`Server running on ${process.env.PORT || 5000}`)
